@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>أنـاه | الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- (اختياري) AOS إن كنتِ تستخدمينه في الصفحة -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+  </head>
+
+  <body class="page-home">
+
+    <!-- التنقل-->
+    <!-- شريط التابات العام -->
+<!-- GLOBAL HEADER (one copy for every page) -->
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="wlecomePage.html">أنـاه</a>
+
+    <ul class="nav-links">
+      <!-- main app pages -->
+      <li><a href="home.html"     class="">الرئيسية</a></li>
+      <li><a href="journal.html"  class="">اليوميات</a></li>
+      <li><a href="analyze.html"  class="">تحليل المزاج</a></li>
+
+      <!-- about dropdown -->
+
+        <button class="theme-toggle" aria-label="تبديل السمة" onclick="toggleTheme()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <!-- باقي محتوى صفحة الجورنال -->
+
+
+
+
+
+    <div class="home-container">
+      <header>
+        <h1 id="greeting">صباح الخير</h1>
+      </header>
+
+      <main>
+        <h2>كيف كان يومك حتى الآن؟</h2>
+
+        <div class="mood-buttons" aria-label="اختر حالتك المزاجية">
+          <button class="mood veryhappy"><img src="/images/veryHabby.png" alt="سعيد"></button>
+          <button class="mood angry"><img src="/images/Angry.png" alt="غاضب"></button>
+          <button class="mood worried"><img src="/images/worried.png" alt="قلق"></button>
+          <button class="mood tired"><img src="/images/Tired.png" alt="متعب"></button>
+          <button class="mood ok"><img src="/images/Ok.png" alt="لا بأس"></button>
+          <button class="mood sad"><img src="/images/Sad.png" alt="حزين"></button>
+        </div>
+
+        <p class="hint">اضغط على أيقونة تعبّر عن شعورك.</p>
+      </main>
+         <!-- إضافة قسم الاقتباسات الإيجابية هنا -->
+      <section id="quotes-section" class="quotes-section">
+        <h3>اقتباسات إيجابية</h3>
+        <p id="quote-display" class="quote-text">...Loading quote</p>
+      </section>
+
+    </div>
+
+    <!-- ✅ Daily Checklist (same page) -->
+    <section class="tasks-card" aria-labelledby="tasksTitle">
+      <div class="tasks-head">
+        <h2 id="tasksTitle">قائمة مهامي اليوم</h2>
+        <button id="startChallengeBtn" class="creative-button">
+          <span class="plus-icon">+</span> ابدأ تحديك اليوم
+        </button>
+      </div>
+
+      <!-- New task form (hidden by default) -->
+      <div id="newTaskContainer" class="task-form" style="display:none;">
+        <div class="form-row">
+          <label for="taskTime" class="sr-only">الوقت</label>
+          <input type="time" id="taskTime" />
+          <label for="taskDescription" class="sr-only">وصف المهمة</label>
+          <input type="text" id="taskDescription" placeholder="أدخل وصف المهمة" />
+        </div>
+
+        <div id="emojiSelector" class="emoji-grid" aria-label="اختر أيقونة">
+          <button type="button" class="emoji">☀️</button>
+          <button type="button" class="emoji">💧</button>
+          <button type="button" class="emoji">🧴</button>
+          <button type="button" class="emoji">🕌</button>
+          <button type="button" class="emoji">👗</button>
+          <button type="button" class="emoji">🎒</button>
+          <button type="button" class="emoji">🚌</button>
+          <button type="button" class="emoji">📚</button>
+          <button type="button" class="emoji">🍎</button>
+          <button type="button" class="emoji">⚽️</button>
+          <button type="button" class="emoji">💤</button>
+          <button type="button" class="emoji">📝</button>
+        </div>
+
+        <div class="form-actions">
+          <button id="saveTaskBtn" class="save-btn">حفظ المهمة</button>
+        </div>
+      </div>
+
+      <!-- Tasks list -->
+      <div id="taskList" class="task-list" role="list"></div>
+    </section>
+
+    <!-- Background blobs -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob mint"></span>
+      <span class="blob peach"></span>
+      <span class="blob purple"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="home.js"></script>
+    <script src="chicklist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>if (window.AOS) AOS.init();</script>
+  </body>
+</html>

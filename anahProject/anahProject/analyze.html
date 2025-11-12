@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تحليل المزاج — أناه</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="analyze">
+
+  <!-- التنقل-->
+    
+<!-- GLOBAL HEADER (one copy for every page) -->
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="wlecomePage.html">أنـاه</a>
+
+    <ul class="nav-links">
+      <!-- main app pages -->
+      <li><a href="home.html"     class="">الرئيسية</a></li>
+      <li><a href="journal.html"  class="">اليوميات</a></li>
+      <li><a href="analyze.html"  class="">تحليل المزاج</a></li>
+      <li>
+        <button class="theme-toggle" aria-label="تبديل السمة" onclick="toggleTheme()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <!-- باقي صفحة تحليل المزاج -->
+
+
+
+
+
+  <section class="card" id="card" aria-label="تحليل المزاج">
+    <div class="header">
+      <div class="title">
+        <h1>تحليل المزاج</h1>
+        <div class="subtitle" id="sub">هذا الأسبوع</div>
+      </div>
+
+      <div class="controls">
+        <label class="sr-only" for="weekSelect">اختيار الأسبوع</label>
+        <select id="weekSelect" title="اختيار الأسبوع"></select>
+        <div class="week-nav" aria-hidden="true">
+          <button id="prev" title="الأسبوع السابق" aria-label="الأسبوع السابق">‹</button>
+          <button id="next" title="الأسبوع التالي" aria-label="الأسبوع التالي">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plot">
+      <div id="tooltip" class="tooltip"></div>
+      <svg id="chart" viewBox="0 0 640 320" preserveAspectRatio="none"
+           role="img" aria-label="منحنى المزاج الأسبوعي مع مؤشرات الوجوه">
+        <g class="grid" id="grid"></g>
+        <path class="ghost" id="ghost-path" d=""></path>
+        <path class="line" id="main-path" d=""></path>
+        <g id="points"></g>
+      </svg>
+    </div>
+
+    <div class="label-row" id="days"></div>
+
+    <!-- التوصيات -->
+    <section class="reco-wrap" aria-labelledby="recoTitle">
+      <div class="reco-header">
+        <h2 id="recoTitle">مقترحات لك</h2>
+        <p class="reco-sub">مختارة بناءً على أسبوعك</p>
+      </div>
+      <div id="recoGrid" class="reco-grid" role="list"></div>
+    </section>
+  </section>
+<div class="bg-blobs" aria-hidden="true">
+  <span class="blob mint"></span>
+  <span class="blob peach"></span>
+  <span class="blob purple"></span>
+</div>
+  <script src="analyze.js"></script>
+</body>
+
+
+</html>

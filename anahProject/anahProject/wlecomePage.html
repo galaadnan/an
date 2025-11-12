@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>أنـاه | مرحبًا</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="page-welcome">
+    <!-- Header -->
+   <!-- GLOBAL HEADER (one copy for every page) -->
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="wlecomePage.html">أنـاه</a>
+
+    <ul class="nav-links">
+      <!-- about dropdown -->
+      <li class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">عن أناه</a>
+        <ul class="dropdown-content">
+          <li><a href="mission.html">مهمتنا <img class="ico" src="images/target.png" alt=""></a></li>
+          <li><a href="team.html">فريقنا <img class="ico" src="images/team.png" alt=""></a></li>
+          <li><a href="story.html">قصتنا <img class="ico" src="images/story.png" alt=""></a></li>
+        </ul>
+      </li>
+
+      <!-- faq + theme -->
+      <li><a href="faq.html">الأسئلة الشائعة</a></li>
+      <li>
+        <button class="theme-toggle" aria-label="تبديل السمة" onclick="toggleTheme()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <!-- Hero -->
+    <main class="hero" id="top">
+      <!-- Soft animated blobs -->
+      <div class="bg-blobs" aria-hidden="true">
+        <span class="blob mint"></span>
+        <span class="blob peach"></span>
+        <span class="blob purple"></span>
+      </div>
+
+      <!-- Glass card -->
+      <section class="card container">
+        <h1 class="title">أهلًا بك في <span class="brand-mark">أناه</span></h1>
+
+        <p class="tagline">
+          مساحتك لتبطئ قليلًا، <strong>وتفهم ذاتك بوضوح</strong>، وتمضي بخطواتٍ
+          أهدأ.
+        </p>
+
+        <p class="quote">«كلُّ رحلةٍ تبدأ بخطوةٍ واحدة، وهذه خطوتُك الأولى.»</p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="SignOrLogin.html">ابدأ</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- About (teasers with read-more) -->
+    <section class="about-teasers container" id="about-teasers">
+      <article class="teaser">
+        <h3>مهمتنا<img src="images/target.png" alt="" srcset="" /></h3>
+        <p>
+          نمنحك مساحة هادئة لفهم ذاتك، وتسجيل مشاعرك، ومتابعة تقدّمك خطوة بخطوة
+          — بلغة بسيطة وتجربة خفيفة.
+        </p>
+        <a class="link-more" href="mission.html">اقرأ المزيد →</a>
+      </article>
+
+      <article class="teaser">
+        <h3>فريقنا<img src="images/team.png" alt="" srcset="" /></h3>
+        <p>
+          نحن فريق علوم حاسب؛ ندمج الهندسة وتجربة المستخدم لبناء أدوات مفيدة
+          بلمسة إنسانية وبساطة واضحة.
+        </p>
+        <a class="link-more" href="team.html">اقرأ المزيد →</a>
+      </article>
+
+      <article class="teaser">
+        <h3><img src="images/story.png" alt="" srcset="" />قصتنا</h3>
+        <p>
+          بدأنا من سؤالٍ بسيط: كيف نُسهّل العناية بالنفس؟ ثم تحوّل إلى أداة
+          ترافقك يوميًا وتحتفي بالتحسّن، صغيرًا كان أم كبيرًا.
+        </p>
+        <a class="link-more" href="story.html">اقرأ المزيد →</a>
+      </article>
+    </section>
+
+    <script src="welcome.js"></script>
+  </body>
+</html>

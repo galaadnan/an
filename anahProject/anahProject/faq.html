@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>أنـاه | الأسئلة الشائعة</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet" />
+  </head>
+
+  <body class="page-faq">
+    <!-- Header (simple) -->
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="index.html">أنـاه</a>
+
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">عن أناه </a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="mission.html">
+                  مهمتنا
+                  <img class="ico" src="images/target.png" alt="" />
+                </a>
+              </li>
+
+              <li>
+                <a href="team.html">
+                  فريقنا
+                  <img class="ico" src="images/team.png" alt="" />
+                </a>
+              </li>
+
+              <li>
+                <a href="story.html">
+                  قصتنا
+                  <img class="ico" src="images/story.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              aria-label="تبديل السمة"
+              onclick="toggleTheme()"
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <main class="faq container" id="top">
+      <!-- Hero -->
+      <section class="faq-hero">
+        <h1>الأسئلة الشائعة</h1>
+        <p>إجابات سريعة وواضحة حول <strong>أنـاه</strong>.</p>
+
+        <nav class="faq-chips" aria-label="فئات الأسئلة">
+          <a class="chip active" href="#cat-all">الكل</a>
+          <a class="chip" href="#cat-account">الحساب</a>
+          <a class="chip" href="#cat-journal">المذكرة</a>
+          <a class="chip" href="#cat-analyze">التحليل</a>
+          <a class="chip" href="#cat-privacy">الخصوصية</a>
+          <a class="chip" href="#cat-general">عام</a>
+        </nav>
+      </section>
+
+      <!-- FAQ list -->
+      <section id="cat-all" class="faq-list">
+        <h2 class="visually-hidden">كل الأسئلة</h2>
+
+        <h3 id="cat-account" class="faq-sec-title">الحساب</h3>
+        <details class="faq-item">
+          <summary class="faq-q">كيف أنشئ حسابًا جديدًا؟</summary>
+          <div class="faq-a">من صفحة التسجيل املئي البيانات الأساسية ثم اضغطي “إنشاء الحساب”.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">نسيت كلمة المرور — كيف أستعيدها؟</summary>
+          <div class="faq-a">من شاشة الدخول اضغطي “نسيت كلمة المرور” وستصلك رسالة لإعادة التعيين.</div>
+        </details>
+
+        <h3 id="cat-journal" class="faq-sec-title">المذكرة</h3>
+        <details class="faq-item">
+          <summary class="faq-q">هل أستطيع تعديل أو حذف مذكرة؟</summary>
+          <div class="faq-a">نعم، من “كل المذكرات” اختاري المذكرة ثم تعديل أو حذف.</div>
+        </details>
+
+        <h3 id="cat-analyze" class="faq-sec-title">التحليل</h3>
+        <details class="faq-item">
+          <summary class="faq-q">ماذا يقدّم تحليل المزاج؟</summary>
+          <div class="faq-a">منحنى أسبوعي مع توصيات عملية مبنية على نمطك.</div>
+        </details>
+
+        <h3 id="cat-privacy" class="faq-sec-title">الخصوصية</h3>
+        <details class="faq-item">
+          <summary class="faq-q">من يطّلع على مذكراتي؟</summary>
+          <div class="faq-a">لا أحد. تحفظ بشكل آمن، ويستخدم التحليل بشكل تجميعي مجهول.</div>
+        </details>
+
+        <h3 id="cat-general" class="faq-sec-title">عام</h3>
+        <details class="faq-item">
+          <summary class="faq-q">هل يوجد وضع ليلي؟</summary>
+          <div class="faq-a">نعم، من زر القمر في الشريط العلوي.</div>
+        </details>
+      </section>
+
+      <!-- Help card -->
+      <section class="faq-help">
+        <div class="help-card">
+          <div class="help-icon">💬</div>
+          <div class="help-text">
+            <h3>لم تجدي إجابتك؟</h3>
+            <p>راسلينا وسنساعدك بسرعة.</p>
+          </div>
+          <a class="help-btn" href="mailto:support@anah.app">تواصلي معنا ↗</a>
+        </div>
+      </section>
+
+      <p class="to-top-wrap"><a class="to-top" href="#top" aria-label="العودة للأعلى">↑</a></p>
+    </main>
+
+    <!-- Blobs background -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob mint"></span>
+      <span class="blob peach"></span>
+      <span class="blob purple"></span>
+    </div>
+  </body>
+</html>

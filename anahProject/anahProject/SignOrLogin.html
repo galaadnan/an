@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>أنـاه | الدخول أو التسجيل</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="page-auth">
+<!-- GLOBAL HEADER (one copy for every page) -->
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="wlecomePage.html">أنـاه</a>
+
+    <ul class="nav-links">
+ 
+
+      <!-- about dropdown -->
+      <li class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">عن أناه</a>
+        <ul class="dropdown-content">
+          <li><a href="mission.html">مهمتنا <img class="ico" src="images/target.png" alt=""></a></li>
+          <li><a href="team.html">فريقنا <img class="ico" src="images/team.png" alt=""></a></li>
+          <li><a href="story.html">قصتنا <img class="ico" src="images/story.png" alt=""></a></li>
+        </ul>
+      </li>
+
+      <!-- faq + theme -->
+      <li><a href="faq.html">الأسئلة الشائعة</a></li>
+      <li>
+        <button class="theme-toggle" aria-label="تبديل السمة" onclick="toggleTheme()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <!-- Auth Wrapper -->
+    <main class="auth">
+      <section class="auth-card" aria-label="تسجيل الدخول أو إنشاء حساب">
+        <!-- Tabs -->
+        <div class="auth-tabs" role="tablist">
+          <button
+            class="auth-tab active"
+            id="tab-login"
+            data-target="panel-login"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-login"
+          >
+            تسجيل الدخول
+          </button>
+          <button
+            class="auth-tab"
+            id="tab-signup"
+            data-target="panel-signup"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-signup"
+          >
+            إنشاء حساب
+          </button>
+        </div>
+
+        <!-- Panel: Login -->
+        <form
+          id="panel-login"
+          class="auth-panel active"
+          role="tabpanel"
+          aria-labelledby="tab-login"
+          novalidate
+        >
+          <h1 class="auth-title">مرحبًا بعودتك</h1>
+          <p class="auth-sub">ادخل بريدك وكلمة المرور للمتابعة.</p>
+
+          <label class="field">
+            <span class="field-label">البريد الإلكتروني</span>
+            <span class="input">
+              <input
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="name@email.com"
+                required
+              />
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 6h16v12H4zM4 6l8 6 8-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </span>
+            <span class="msg" data-role="email-msg"></span>
+          </label>
+
+          <label class="field">
+            <span class="field-label">كلمة المرور</span>
+            <span class="input">
+              <input
+                type="password"
+                autocomplete="current-password"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                class="peek"
+                type="button"
+                aria-label="إظهار/إخفاء كلمة المرور"
+              >
+                👁️
+              </button>
+            </span>
+            <div class="row between">
+              <label class="tick"><input type="checkbox" /> تذكّرني</label>
+              <a class="link" href="#">نسيتِ كلمة المرور؟</a>
+            </div>
+            <span class="msg" data-role="pass-msg"></span>
+          </label>
+
+          <button class="btn-auth primary" type="submit">دخول ↗</button>
+
+          <div class="or"><span>أو</span></div>
+
+          <div class="sso">
+            <button type="button" class="btn-auth ghost">
+              متابعة عبر Google
+            </button>
+            <button type="button" class="btn-auth ghost">
+              متابعة عبر Apple
+            </button>
+          </div>
+
+          <p class="swap">
+            ليس لديكِ حساب؟
+            <button class="swap-btn" type="button" data-swap="signup">
+              أنشئي حسابًا
+            </button>
+          </p>
+        </form>
+
+        <!-- Panel: Sign up -->
+        <form
+          id="panel-signup"
+          class="auth-panel"
+          role="tabpanel"
+          aria-labelledby="tab-signup"
+          novalidate
+        >
+          <h1 class="auth-title">حساب جديد</h1>
+          <p class="auth-sub">ابدئي رحلتك مع أناه خلال ثوانٍ.</p>
+
+          <label class="field">
+            <span class="field-label">الاسم الكامل</span>
+            <span class="input">
+              <input
+                type="text"
+                autocomplete="name"
+                placeholder="الاسم كما تحبين ظهوره"
+                required
+              />
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M4 20c2.2-3.5 13.8-3.5 16 0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+            </span>
+          </label>
+
+          <label class="field">
+            <span class="field-label">البريد الإلكتروني</span>
+            <span class="input">
+              <input
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="name@email.com"
+                required
+              />
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 6h16v12H4zM4 6l8 6 8-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </span>
+            <span class="msg" data-role="email2-msg"></span>
+          </label>
+
+          <label class="field">
+            <span class="field-label">كلمة المرور</span>
+            <span class="input">
+              <input
+                id="signup-pass"
+                type="password"
+                autocomplete="new-password"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                class="peek"
+                type="button"
+                aria-label="إظهار/إخفاء كلمة المرور"
+              >
+                👁️
+              </button>
+            </span>
+
+            <!-- strength -->
+            <div class="strength" aria-hidden="true">
+              <span class="bar"></span><span class="bar"></span
+              ><span class="bar"></span><span class="bar"></span>
+            </div>
+            <span class="hint">٨ أحرف على الأقل مع رقم وحرف كبير.</span>
+          </label>
+
+          <label class="tick"
+            ><input type="checkbox" required /> أوافق على
+            <a class="link" href="#">الشروط</a> و<a class="link" href="#"
+              >الخصوصية</a
+            >.</label
+          >
+
+          <button class="btn-auth primary" type="submit">إنشاء الحساب ↗</button>
+
+          <div class="or"><span>أو</span></div>
+
+          <div class="sso">
+            <button type="button" class="btn-auth ghost">
+              التسجيل عبر Google
+            </button>
+            <button type="button" class="btn-auth ghost">
+              التسجيل عبر Apple
+            </button>
+          </div>
+
+          <p class="swap">
+            لديك حساب؟
+            <button class="swap-btn" type="button" data-swap="login">
+              سجّلي دخولًا
+            </button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Shared blobs background -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob mint"></span>
+      <span class="blob peach"></span>
+      <span class="blob purple"></span>
+    </div>
+
+    <script>
+      // Simple tabs
+      const tabs = document.querySelectorAll(".auth-tab");
+      const panels = document.querySelectorAll(".auth-panel");
+      tabs.forEach((t) => {
+        t.addEventListener("click", () => {
+          tabs.forEach((b) => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          panels.forEach((p) => p.classList.remove("active"));
+          t.classList.add("active");
+          t.setAttribute("aria-selected", "true");
+          document.getElementById(t.dataset.target).classList.add("active");
+        });
+      });
+
+      // swap links
+      document.querySelectorAll(".swap-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target =
+            btn.dataset.swap === "signup" ? "tab-signup" : "tab-login";
+          document.getElementById(target).click();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+
+      // peek password
+      document.querySelectorAll(".peek").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = btn.previousElementSibling;
+          input.type = input.type === "password" ? "text" : "password";
+        });
+      });
+
+      // strength meter
+      const pass = document.getElementById("signup-pass");
+      if (pass) {
+        const bars = document.querySelectorAll(".strength .bar");
+        pass.addEventListener("input", () => {
+          const v = pass.value.trim();
+          let score = 0;
+          if (v.length >= 8) score++;
+          if (/[A-Zأ-ي]/.test(v)) score++;
+          if (/[0-9]/.test(v)) score++;
+          if (/[^A-Za-z0-9]/.test(v)) score++;
+          bars.forEach((b, i) => b.classList.toggle("on", i < score));
+        });
+      }
+
+      // very light client validation
+      document.querySelectorAll(".auth-panel").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          if (!form.checkValidity()) {
+            e.preventDefault();
+            form.querySelectorAll("input[required]").forEach((inp) => {
+              if (!inp.validity.valid) {
+                inp
+                  .closest(".field")
+                  .querySelector(".msg")
+                  ?.classList.add("show");
+              }
+            });
+          }
+        });
+        form.querySelectorAll("input").forEach((inp) => {
+          inp.addEventListener("input", () => {
+            inp
+              .closest(".field")
+              .querySelector(".msg")
+              ?.classList.remove("show");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>المذكرة اليومية</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- التنقل-->
+  
+<!-- GLOBAL HEADER (one copy for every page) -->
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="wlecomePage.html">أنـاه</a>
+
+    <ul class="nav-links">
+      <!-- main app pages -->
+      <li><a href="home.html"     class="">الرئيسية</a></li>
+      <li><a href="journal.html"  class="">اليوميات</a></li>
+      <li><a href="analyze.html"  class="">تحليل المزاج</a></li>
+      <li>
+        <button class="theme-toggle" aria-label="تبديل السمة" onclick="toggleTheme()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <!-- Mood + Journal -->
+  <main class="page-journal">
+    <h2>كيف حالك اليوم؟</h2>
+<div class="bg-blobs" aria-hidden="true">
+  <span class="blob mint"></span>
+  <span class="blob peach"></span>
+  <span class="blob purple"></span>
+</div>
+    <!-- ⭐⭐⭐⭐⭐ تقييم اليوم -->
+    <div class="rating" id="rating" aria-label="قيّم يومك من 1 إلى 5">
+      <button type="button" data-v="5" aria-label="5 نجوم">★</button>
+      <button type="button" data-v="4" aria-label="4 نجوم">★</button>
+      <button type="button" data-v="3" aria-label="3 نجوم">★</button>
+      <button type="button" data-v="2" aria-label="2 نجمتان">★</button>
+      <button type="button" data-v="1" aria-label="نجمة واحدة">★</button>
+      <span class="rating-text" id="ratingText">قيّمي يومك: 0/5</span>
+    </div>
+
+    <div class="moods" id="moods">
+  <label class="m bad">
+    <input type="radio" name="mood" value="غاضب">
+    <img src="images/Angry.png" alt="غاضب" class="emoji"> 
+  </label>
+
+  <label class="m sad">
+    <input type="radio" name="mood" value="حزين">
+    <img src="images/Sad.png" alt="حزين" class="emoji"> 
+  </label>
+
+  <label class="m meh">
+    <input type="radio" name="mood" value="قلق">
+    <img src="images/worried.png" alt="قلق" class="emoji"> 
+  </label>
+
+  <label class="m ok">
+    <input type="radio" name="mood" value="لا بأس">
+    <img src="images/Ok.png" alt="لا بأس" class="emoji"> 
+  </label>
+
+  <label class="m good">
+    <input type="radio" name="mood" value="سعيد">
+    <img src="images/veryHabby.png" alt="سعيد" class="emoji"> 
+  </label>
+
+  <label class="m great">
+    <input type="radio" name="mood" value="تعبان">
+    <img src="images/Tired.png" alt="تعبان" class="emoji"> 
+  </label>
+</div>
+
+
+    <h3>مذكرتك</h3>
+    <textarea id="note" placeholder="اكتب مذكرتك هنا..."></textarea>
+
+    <div class="actions">
+      <button id="save">💾 حفظ المذكرة</button>
+      <button id="showAll">📖 عرض كل المذكرات</button>
+      <button type="reset" id="clearToday">مسح اليوم</button>
+      <button id="showAchv">🏆 إنجازاتي</button>
+    </div>
+  </main>
+
+  <!-- All journals list -->
+  <section class="card" id="allEntries" hidden>
+    <h2>كل المذكرات</h2>
+    <div id="entries"></div>
+  </section>
+
+  <!-- 🏆 Achievements -->
+  <section class="card" id="achievements" hidden>
+    <h2>الإنجازات</h2>
+    <div id="achvList" class="achv-list"></div>
+  </section>
+
+  <!-- Streak -->
+  <section class="streak card">
+    <div>🔥 الحالية: <b id="curStreak">0</b> • أطول سلسلة: <b id="bestStreak">0</b> يوم</div>
+  </section>
+<div class="bg-blobs" aria-hidden="true">
+  <span class="blob mint"></span>
+  <span class="blob peach"></span>
+  <span class="blob purple"></span>
+</div>
+
+  <script src="journal.js"></script>
+</body>
+
+
+</html>
